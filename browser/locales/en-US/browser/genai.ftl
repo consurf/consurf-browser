@@ -119,7 +119,7 @@ genai-shortcuts-hide =
 
 ## Chatbot header
 
-genai-chatbot-title = AI chatbot
+genai-chatbot-title = Sidebar and GLMP Chatbot
 genai-header-provider-menu =
     .title = Choose a chatbot
 genai-header-settings-button =
@@ -164,11 +164,11 @@ genai-chatbot-summarize-sidebar-generic-subtitle = Right-click the sparkles butt
 genai-chatbot-summarize-footer-provider-subtitle = Open your AI chatbot in the sidebar and choose “Summarize page” at the bottom.
 genai-chatbot-summarize-footer-generic-subtitle = Add an AI chatbot to the { -brand-short-name } sidebar to quickly summarize pages.
 
-genai-chatbot-contextual-title = Use an AI chatbot without switching tabs
-genai-chatbot-contextual-subtitle = Chat and browse side-by-side when you add an AI chatbot in the { -brand-short-name } sidebar.
+genai-chatbot-contextual-title = Your AI Chatbot. Everywhere.
+genai-chatbot-contextual-subtitle = Chat and browse side-by-side when you add an AI chatbot in the { -brand-short-name } sidebar and use that chatbot on any supported website.
 genai-chatbot-contextual-button = Choose a chatbot
 
-genai-onboarding-choose-header = Choose an AI chatbot to use in the { -brand-short-name } sidebar
+genai-onboarding-choose-header = Choose an AI chatbot to use in the { -brand-short-name } sidebar and GLMP
 # "Switch anytime" refers to allowing the user to switch to a different chatbot.
 genai-onboarding-choose-description = Switch anytime. For help choosing, <a data-l10n-name="learn-more">learn more about each chatbot</a>.
 genai-onboarding-primary = Continue

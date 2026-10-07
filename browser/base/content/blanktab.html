@@ -1,15 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ConSurf Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- This Source Code Form is subject to the terms of the Mozilla Public
-   - License, v. 2.0. If a copy of the MPL was not distributed with this
-   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0b0f19;
+      color: #e5e7eb;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 70px;
+      text-align: center;
+    }
 
-<html>
-  <head>
-    <meta name="color-scheme" content="light dark" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'none'; style-src chrome:; object-src 'none'"
-    />
-  </head>
+    .logo {
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    #urlBar {
+      width: 60%;
+      max-width: 600px;
+      padding: 14px 18px;
+      border-radius: 32px;
+      border: none;
+      background-color: #111827;
+      color: #f3f4f6;
+      font-size: 18px;
+      box-shadow: 0 0 0 2px #1f2937 inset;
+      transition: box-shadow 0.2s;
+    }
+
+    #urlBar:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #3b82f6 inset;
+    }
+
+    #goBtn {
+      margin-top: 20px;
+      padding: 12px 26px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      transition: background 0.2s;
+    }
+
+    #goBtn:hover {
+      background: #1d4ed8;
+    }
+
+    .nav-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-btn {
+      padding: 12px 20px;
+      background: #1f2937;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .nav-btn:hover {
+      background: #374151;
+    }
+
+    footer {
+      margin-top: 60px;
+      opacity: 0.5;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">ConSurf</div>
+
+  <input id="urlBar" type="text" placeholder="Enter URL or Search…" />
+  <button id="goBtn">Go</button>
+
+  <div class="nav-buttons">
+    <a class="nav-btn" href="featured.html">Plugin Store</a>
+    <a class="nav-btn" href="https://consurf.github.io/callback/files">Local Files</a>
+  </div>
+
+  <footer>ConSurf</footer>
+
+  <script>
+
+    // -------------------------------
+    // URL or Search Handler
+    // -------------------------------
+    function handleInput() {
+      const input = document.getElementById("urlBar").value.trim();
+      if (!input) return;
+
+      const isURL = /^(https?:\/\/)/i.test(input) || /\./.test(input);
+
+      if (isURL) {
+        const finalURL = input.startsWith("http") ? input : "https://" + input;
+        window.location.href = finalURL;
+      } else {
+        window.location.href =
+          "https://duckduckgo.com/?q=" + encodeURIComponent(input);
+      }
+    }
+
+    document.getElementById("goBtn").onclick = handleInput;
+    document.getElementById("urlBar").addEventListener("keydown", e => {
+      if (e.key === "Enter") handleInput();
+    });
+  </script>
+
+</body>
 </html>

@@ -120,6 +120,10 @@ MOZ_SRC_FILES += [
     "StartupOSIntegration.sys.mjs",
 ]
 
+EXTRA_JS_MODULES += [
+    "LLMProtocolHandler.sys.mjs",
+]
+
 for var in (
     "MOZ_APP_DISPLAYNAME",
     "MOZ_APP_NAME",

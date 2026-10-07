@@ -911,3 +911,38 @@ export var NetworkHelper = {
     return paramsArray;
   },
 };
+
+let customHeaderObserver = null;
+
+export function registerCustomHeaderAppender(
+  headerName = "X-GLMP-LLM",
+  headerValue = "Claude"
+) {
+  if (customHeaderObserver) {
+    return;
+  }
+
+  customHeaderObserver = {
+    observe(subject, topic) {
+      if (topic === "http-on-modify-request") {
+        try {
+          const channel = subject.QueryInterface(Ci.nsIHttpChannel);
+          channel.setRequestHeader(headerName, headerValue, false);
+        } catch (e) {
+          // Channel does not implement nsIHttpChannel
+        }
+      }
+    },
+  };
+
+  Services.obs.addObserver(customHeaderObserver, "http-on-modify-request");
+}
+
+export function unregisterCustomHeaderAppender() {
+  if (customHeaderObserver) {
+    Services.obs.removeObserver(customHeaderObserver, "http-on-modify-request");
+    customHeaderObserver = null;
+  }
+}
+
+registerCustomHeaderAppender("GLMP-LLM", "Claude");

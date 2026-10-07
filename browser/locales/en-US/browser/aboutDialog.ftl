@@ -76,13 +76,13 @@ warningDesc-version = { -brand-short-name } is experimental and may be unstable.
 aboutdialog-help-user = { -brand-product-name } Help
 aboutdialog-submit-feedback = Submit Feedback
 
-community-exp = <label data-l10n-name="community-exp-mozillaLink">{ -vendor-short-name }</label> is a <label data-l10n-name="community-exp-creditsLink">global community</label> working together to keep the Web open, public and accessible to all.
+community-exp = <label data-l10n-name="community-exp-mozillaLink">{ -vendor-short-name }</label> is a non-for-profit developing browsers.
 
-community-2 = { -brand-short-name } is designed by <label data-l10n-name="community-mozillaLink">{ -vendor-short-name }</label>, a <label data-l10n-name="community-creditsLink">global community</label> working together to keep the Web open, public and accessible to all.
+community-2 = { -brand-short-name } is designed by <label data-l10n-name="community-mozillaLink">{ -vendor-short-name }</label>, a non-for-profit developing browsers.
 
-helpus = Want to help? <label data-l10n-name="helpus-donateLink">Make a donation</label> or <label data-l10n-name="helpus-getInvolvedLink">get involved!</label>
+helpus = 
 
-helpus-referrals2 = Want to help? <label data-l10n-name="helpus-donateLink">Make a donation</label>, <label data-l10n-name="helpus-shareFirefoxLink">share { -brand-product-name }</label>, or <label data-l10n-name="helpus-getInvolvedLink">get involved!</label>
+helpus-referrals2 = 
 
 bottomLinks-license = Licensing Information
 bottom-links-terms = Terms of Use

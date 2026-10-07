@@ -485,7 +485,7 @@ newtab-wallpaper-abstract-black-waves = Black wavy shapes
 
 ## Photographs
 
-newtab-wallpaper-category-title-photographs = Photographs
+newtab-wallpaper-category-title-photographs = ConSurf
 newtab-wallpaper-beach-at-sunrise = Beach at sunrise
 newtab-wallpaper-beach-at-sunset = Beach at sunset
 newtab-wallpaper-storm-sky = Storm sky
@@ -514,7 +514,7 @@ newtab-wallpaper-celestial-river = Satellite image of river
 
 ## Firefox
 
-newtab-wallpaper-category-title-firefox = { -brand-product-name }
+newtab-wallpaper-category-title-firefox = Firefox
 
 ## Firefox wallpaper descriptions used for screen readers
 

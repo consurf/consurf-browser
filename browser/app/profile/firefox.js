@@ -1823,7 +1823,7 @@ pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highli
 pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highlights.includeBookmarks", true);
 pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highlights.includeDownloads", true);
 pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highlights.rows", true);
-pref("services.sync.prefs.sync.browser.newtabpage.enabled", true);
+pref("services.sync.prefs.sync.browser.newtabpage.enabled", false);
 pref("services.sync.prefs.sync.browser.newtabpage.pinned", true);
 pref("services.sync.prefs.sync.browser.pdfjs.feature-tour", true);
 pref("services.sync.prefs.sync.browser.safebrowsing.downloads.enabled", true);
@@ -1860,7 +1860,7 @@ pref("services.sync.prefs.sync.dom.security.https_only_mode_ever_enabled", true)
 pref("services.sync.prefs.sync.dom.security.https_only_mode_ever_enabled_pbm", true);
 pref("services.sync.prefs.sync.dom.security.https_only_mode_pbm", true);
 pref("services.sync.prefs.sync.extensions.update.enabled", true);
-pref("services.sync.prefs.sync.extensions.activeThemeID", true);
+pref("services.sync.prefs.sync.extensions.activeThemeID", false);
 pref("services.sync.prefs.sync.general.autoScroll", true);
 // general.autoScroll has a different default on Linux vs elsewhere.
 pref("services.sync.prefs.sync-seen.general.autoScroll", false);
@@ -3873,3 +3873,11 @@ pref("distribution.mozillaonline.ignore", true);
 #ifdef XP_MACOSX
   pref("browser.macAppMenu.setAsDefaultShown", false);
 #endif
+
+
+// Tell Firefox's URL bar that llm:// is a recognized protocol scheme
+pref("network.protocol-handler.expose.llm", true);
+pref("network.protocol-handler.external.llm", false);
+pref("network.protocol-handler.warn-external.llm", false);
+
+pref("extensions.activeThemeID", "nova-tide@mozilla.org");

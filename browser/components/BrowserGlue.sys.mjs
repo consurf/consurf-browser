@@ -391,6 +391,7 @@ BrowserGlue.prototype = {
   // runs on startup, before the first command line handler is invoked
   // (i.e. before the first window is opened)
   _beforeUIStartup: function BG__beforeUIStartup() {
+    
     lazy.SessionStartup.init();
 
     // check if we're in safe mode
@@ -422,6 +423,19 @@ BrowserGlue.prototype = {
     lazy.BrowserUtils.callModulesFromCategory({
       categoryName: "browser-before-ui-startup",
     });
+
+    //Services.obs.addObserver({
+    //  observe(subject, topic) {
+    //    if (topic === "http-on-modify-request") {
+    //      try {
+    //        const channel = subject.QueryInterface(Ci.nsIHttpChannel);
+    //        channel.setRequestHeader("GLMP-LLM", "Claude", false);
+    //      } catch (e) {
+    //        // Ignore requests that don't implement nsIHttpChannel
+    //      }
+    //    }
+    //  },
+    //}, "http-on-modify-request", false);
 
     Services.obs.notifyObservers(null, "browser-ui-startup-complete");
   },

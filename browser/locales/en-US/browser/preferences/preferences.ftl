@@ -100,11 +100,11 @@ pane-languages-title2 = Languages
 preferences-languages-header3 =
     .heading = Languages
 
-settings-pane-labs-title2 = { -firefoxlabs-brand-name }
-  .title = { -firefoxlabs-brand-name }
+settings-pane-labs-title2 = ConSurf Labs
+  .title = ConSurf Labs
 
 settings-pane-labs-header =
-    .heading = { -firefoxlabs-brand-name }
+    .heading = ConSurf Labs
 pane-experimental-description4 = Give our experimental features a try! They’re in development and evolving, which could impact how { -brand-short-name } works. We only receive data about your use of these features if you have <a data-l10n-name="data-collection">technical and interaction data</a> turned on.
 
 pane-experimental-reset =
@@ -961,13 +961,13 @@ home-restore-defaults =
     .accesskey = R
 
 home-mode-choice-default-fx =
-    .label = { -firefox-home-brand-name } (Default)
+    .label = Firefox-Style
 
 home-mode-choice-custom =
     .label = Custom URLs…
 
 home-mode-choice-blank =
-    .label = Blank Page
+    .label = ConSurf Custom
 
 ## Custom Homepage subpage
 
@@ -2538,11 +2538,11 @@ preferences-ai-controls-speech-recognition-control =
     .description = Transcribe speech locally.
 
 preferences-ai-controls-sidebar-chatbot-group-3 =
-    .label = AI chatbot providers in sidebar
-    .description = Keep a chatbot in view as you browse. Choose from multiple providers and switch anytime.
+    .label = Choose Your AI. Used Everywhere.
+    .description = Use a chatbot in your sidebar. Choose from multiple providers and switch anytime.
 
 preferences-ai-controls-sidebar-chatbot-control =
-    .label = Chatbot in sidebar
+    .label = Chatbot Everywhere
 
 # This option means that a user will see the feature and can use it.
 preferences-ai-controls-state-available =
