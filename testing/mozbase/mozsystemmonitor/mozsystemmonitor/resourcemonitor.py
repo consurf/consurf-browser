@@ -282,7 +282,16 @@ def _collect(pipe, poll_interval):
             updated_known_processes = dict()
             for p in psutil.process_iter():
                 pid = p.pid
-                create_time = p.create_time()
+                try:
+                    with p.oneshot():
+                        create_time = p.create_time()
+                        # Zombies have exited, they just haven't been waited
+                        # for by their parent yet.
+                        if p.status() == psutil.STATUS_ZOMBIE:
+                            continue
+                except psutil.Error:
+                    # The process exited or isn't accessible.
+                    continue
                 # If the process creation time does not match, a new process reused a pid.
                 if pid in known_processes and create_time == known_processes[pid][0]:
                     updated_known_processes[pid] = known_processes[pid]
@@ -1494,13 +1503,27 @@ class SystemResourceMonitor:
         else:
             # test_status and log actions
             status = (data.get("status") or data.get("level")).upper()
+            # mozlog omits "expected" when the result was the expected one, so
+            # an absent key is what marks a todo(), a fails-if, or a hit on an
+            # expectation file.
+            expected = data.get("expected")
+            as_expected = expected is None or expected.upper() == status
             marker_name = status
 
             # Determine color based on status
             if status == "PASS":
-                marker_data["color"] = "green"
+                if as_expected:
+                    marker_data["color"] = "green"
+                else:
+                    # A todo() that passed; this fails the test.
+                    marker_name = "UNEXPECTED-PASS"
+                    marker_data["color"] = "orange"
             elif status == "FAIL":
-                marker_data["color"] = "orange"
+                if as_expected:
+                    marker_name = "KNOWN-FAIL"
+                    marker_data["color"] = "yellow"
+                else:
+                    marker_data["color"] = "orange"
             elif status == "ERROR":
                 marker_data["color"] = "red"
 
