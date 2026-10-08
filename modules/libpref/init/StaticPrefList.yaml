@@ -830,7 +830,7 @@
   mirror: always
 
 - name: apz.pinch_lock.buffer_max_age
-  type: int32_t
+  type: uint32_t
   value: 80   # milliseconds
   mirror: once
 
@@ -884,7 +884,7 @@
   mirror: always
 
 - name: apz.touch_scroll.buffer_max_age
-  type: int32_t
+  type: uint32_t
   value: 200  # milliseconds
   mirror: once
 
@@ -3781,6 +3781,13 @@
 
 #ifdef XP_WIN
 - name: dom.ipc.processPriorityManager.backgroundUsesEcoQoS
+  type: bool
+  value: false
+  mirror: always
+
+# Whether the main threads of the parent process and of foreground content
+# processes run at THREAD_PRIORITY_ABOVE_NORMAL.
+- name: dom.ipc.processPriorityManager.foregroundRaisesMainThreadPriority
   type: bool
   value: false
   mirror: always
