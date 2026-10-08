@@ -459,6 +459,14 @@ const CONFIG_PANES = Object.freeze({
     module: "chrome://browser/content/preferences/config/account-sync.mjs",
     replaces: "sync",
   },
+  moreFromMozilla: {
+    l10nId: "more-from-moz-page-header",
+    iconSrc: "chrome://browser/skin/preferences/mozilla-16.svg",
+    groupIds: ["moreFromMozillaPromo", "moreFromMozillaProducts"],
+    module: "chrome://browser/content/preferences/config/moreFromMozilla.mjs",
+    visible: () => NimbusFeatures.moreFromMozilla.getVariable("enabled"),
+    replaces: "moreFromMozilla",
+  },
   tabsBrowsing: {
     l10nId: "tabs-browsing-section",
     groupIds: [
@@ -617,7 +625,12 @@ function init_all() {
       });
     }
   } else {
-    
+    NimbusFeatures.moreFromMozilla.recordExposureEvent({ once: true });
+    if (NimbusFeatures.moreFromMozilla.getVariable("enabled")) {
+      document.getElementById("category-more-from-mozilla").hidden = false;
+      gMoreFromMozillaPane.option =
+        NimbusFeatures.moreFromMozilla.getVariable("template");
+      register_module("paneMoreFromMozilla", gMoreFromMozillaPane);
     }
   }
 

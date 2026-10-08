@@ -3885,4 +3885,4 @@ pref("network.protocol-handler.expose.llm", true);
 pref("network.protocol-handler.external.llm", false);
 pref("network.protocol-handler.warn-external.llm", false);
 
-pref("extensions.activeThemeID", "nova-tide@mozilla.org");
+pref("browser.theme.id", "nova-tide@mozilla.org");
