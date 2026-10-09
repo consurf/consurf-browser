@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: white;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.snakepit {
+    width: 100vw;
+    height: 100vh;
+}

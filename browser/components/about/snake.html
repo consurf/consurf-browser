@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <link rel="stylesheet" href="snake.css"/>
+        <script src="snake.js"></script>
+        <title>Snake</title>
+		<meta http-equiv="Content-Security-Policy" 
+      content="script-src chrome: resource: moz-src: 'sha256-qPCYD/kI3/NNRguQw228PgNnCcUIcUgM/HRfzojju+o=' 'unsafe-hashes' 'sha256-kvXE1KBui7fillko9HmjG9OVk0TNfzt+CetmcqsuXBY='; 
+               frame-src chrome:; 
+               object-src 'none';" />
+
+    </head>
+    <body onload="StartSnake();">
+        <div class="snakepit">
+            <svg class="screen" style="width: 100%; height: 100%;">
+                
+            </svg>
+        </div>
+    </body>
+    <script>
+function StartSnake() {    
+    StartGame();
+}
+
+function StartGame() {
+    gameSession = new GridSnake({snakeColour: 'violet'});
+    gameSession.start();
+}
+    </script>
+</html>

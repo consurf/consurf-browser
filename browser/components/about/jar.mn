@@ -1,5 +1,5 @@
-llm.jar:
-% content llm %content/
-  content/llm.html (llm.html)
-  content/setup.html (setup.html)
-  content/ask.html (ask.html)
+consurf.jar:
+% content consurf %content/
+  content/snake.html (snake.html)
+  content/snake.js (snake.js)
+  content/snake.css (snake.css)
